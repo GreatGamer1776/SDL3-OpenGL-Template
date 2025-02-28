@@ -135,7 +135,9 @@
       <AdditionalDependencies>freetype.lib;SDL3.lib;SDL3_test.lib;SDL3_image.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /S "$(ProjectDir)dlls\*.dll" "$(TargetDir)"</Command>
+      <Command>xcopy /Y /S "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
+if not exist $(TargetDir)\shaders mkdir $(TargetDir)\shaders
+xcopy /Y /S "$(ProjectDir)shaders\*.glsl" "$(TargetDir)\shaders"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -334,8 +336,16 @@
     <ClInclude Include="utils\shader.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader files\testFragmentShader.glsl" />
-    <None Include="shader files\testVertexShader.glsl" />
+    <None Include="shaders\testFragmentShader.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+    </None>
+    <None Include="shaders\testVertexShader.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

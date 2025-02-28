@@ -53,7 +53,7 @@ int main(){
 	//Give the vertices to OpenGL
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexBufferData), vertexBufferData, GL_STATIC_DRAW);
 	//Compile shader to make triangle red
-	GLuint shaderID = Shader::LoadShaders("shader files/testVertexShader.glsl", "shader files/testFragmentShader.glsl");
+	GLuint shaderID = Shader::LoadShaders("shaders/testVertexShader.glsl", "shaders/testFragmentShader.glsl");
 
 	while (Render::isRunning) {
 		//Event Polling

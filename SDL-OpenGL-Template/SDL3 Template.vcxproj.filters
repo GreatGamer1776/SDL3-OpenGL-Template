@@ -592,7 +592,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader files\testFragmentShader.glsl" />
-    <None Include="shader files\testVertexShader.glsl" />
+    <None Include="shaders\testFragmentShader.glsl" />
+    <None Include="shaders\testVertexShader.glsl" />
   </ItemGroup>
 </Project>
