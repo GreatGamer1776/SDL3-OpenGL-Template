@@ -24,7 +24,7 @@
     <ProjectGuid>{16e7a1db-f9dd-4441-bd2d-e6ae969b2c5d}</ProjectGuid>
     <RootNamespace>SDL3Template</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>3D Renderer</ProjectName>
+    <ProjectName>SDL3-OpenGL-Template</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
